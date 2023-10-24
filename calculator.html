@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <form id="calculator-form">
+        First Number: <input type="text" id="first" required><br>
+        Second Number: <input type="text" id="second" required><br>
+        <input type="button" value="Calculate" onclick="calculate()">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            var first = parseFloat(document.getElementById('first').value);
+            var second = parseFloat(document.getElementById('second').value);
+
+            if (!isNaN(first) && !isNaN(second)) {
+                var result = first + second;
+                document.getElementById('result').innerHTML = "Result: " + result;
+            } else {
+                document.getElementById('result').innerHTML = "Please enter valid numbers.";
+            }
+        }
+    </script>
+</body>
+</html>
